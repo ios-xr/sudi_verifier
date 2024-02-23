@@ -56,6 +56,7 @@ Best case would be to use key or certificate-based authentication supported by I
 **Script options –**
 
 linux_user# ./verify_sudi_certs.py -h
+
 usage: verify_sudi_certs.py [-h] [--input JSON_file]
 
 Validate SUDI Cert Output JSON file.
