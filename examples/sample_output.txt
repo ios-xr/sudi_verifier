@@ -1,6 +1,6 @@
 
 ##################### Full Mode #####################
-krreddy@KRREDDY-M-109E verifier_scripts % ./verify_sudi_certs.py 
+linux_user% ./verify_sudi_certs.py 
 Connecting to host 1.2.3.4 using passwordless authentication
 Connected to host 1.2.3.4
 Executing Command: show platform security attest certificate CiscoSUDI location all nonce e23c87fb json 
