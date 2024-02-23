@@ -1,0 +1,48 @@
+
+##################### Full Mode #####################
+krreddy@KRREDDY-M-109E verifier_scripts % ./verify_sudi_certs.py 
+Connecting to host 1.2.3.4 using passwordless authentication
+Connected to host 1.2.3.4
+Executing Command: show platform security attest certificate CiscoSUDI location all nonce e23c87fb json 
+CiscoSUDI JSON output saved to 'output/sudi_certs_2024-02-23_17-57-45.json'
+Disconnected from 1.2.3.4
+----------------------------------------
+Verifying SUDI Certificate for node: 0/RP0/CPU0
+SUDI Signature Validated Successfully
+Nonce Validated Successfully, expected: e23c87fb received: e23c87fb
+SUDI Certificate Info: 
+  Version: Version.v3
+  Serial Number: 1234567890
+  Subject: Serial Number=PID:8201 SN:DEADBEEF, O=Cisco, OU=ACT-2 Lite SUDI, 
+           Name=Cisco 8201 Chassis w/ 24x400GE QSFP56-DD & 12x100GE QSFP28 MAC:deadbeef1234-0200
+  Issuer : CN=High Assurance SUDI CA, O=Cisco
+  Validity
+    Not Before: 2021-03-18 10:07:10+00:00
+    Not After : 2099-08-09 20:58:26+00:00
+SUDI Certificate Chain Validated Successfully.
+SUDI CA Certificate confirmed as Cisco subCA(CN=High Assurance SUDI CA)
+SUDI Root Certificate confirmed as Cisco RootCA(CN=Cisco Root CA 2099)
+SUDI Certificate Verification Complete for node: 0/RP0/CPU0
+----------------------------------------
+
+##################### Verification Only Mode #####################
+linux_user% ./verify_sudi_certs.py --input ./output/sudi_certs_2024-02-23_17-57-45.json
+Reading CiscoSUDI JSON data from input file: ./output/sudi_certs_2024-02-23_17-57-45.json
+Connection specific Nonce Validation will be skipped
+----------------------------------------
+Verifying SUDI Certificate for node: 0/RP0/CPU0
+SUDI Signature Validated Successfully
+SUDI Certificate Info: 
+  Version: Version.v3
+  Serial Number: 1234567890
+  Subject: Serial Number=PID:8201 SN:DEADBEEF, O=Cisco, OU=ACT-2 Lite SUDI, 
+           Name=Cisco 8201 Chassis w/ 24x400GE QSFP56-DD & 12x100GE QSFP28 MAC:deadbeef1234-0200
+  Issuer : CN=High Assurance SUDI CA, O=Cisco
+  Validity
+    Not Before: 2021-03-18 10:07:10+00:00
+    Not After : 2099-08-09 20:58:26+00:00
+SUDI Certificate Chain Validated Successfully.
+SUDI CA Certificate confirmed as Cisco subCA(CN=High Assurance SUDI CA)
+SUDI Root Certificate confirmed as Cisco RootCA(CN=Cisco Root CA 2099)
+SUDI Certificate Verification Complete for node: 0/RP0/CPU0
+----------------------------------------
