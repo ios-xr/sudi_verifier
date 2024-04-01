@@ -247,7 +247,9 @@ class CiscoSUDI:
         issuer_str = ""
 
         print("{:>{}}{}".format("", 2, "Validity"))
-        if sys.version_info >= (3, 6):
+        expected_cryptography_version = "42.0.0"                                
+        installed_cryptography_version = cryptography.__version__               
+        if installed_cryptography_version >= expected_cryptography_version:
             print("{:>{}}{}{}".format("", 4, "Not Before: ", cert.not_valid_before_utc))
             print("{:>{}}{}{}".format("", 4, "Not After : ", cert.not_valid_after_utc))
         else:
