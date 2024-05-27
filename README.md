@@ -12,20 +12,20 @@ Dependencies to run the scripts – The requirements.txt file has the list of py
 **Mode#1 - Full Mode**
 
 1.	In this mode, the script fetches the JSON output of the SUDI certificate and does the validation.
-2.	Below steps are performed in this mode
-a.	The script connects to the target router over SSH.
-b.	The script then executes the required CLI (including a unique nonce to ensure the freshness of the response) to fetch the signed SUDI certificate in JSON format.
-c.	Lastly, the script verifies the signature, validates the nonce and then verifies the SUDI certificate chain.
-3.	For connecting to the router, the config.ini file in the current working directory will be used. The hostname and other details needed for connecting to the router can be provided in this file.
-4.	We highly recommend using password less method of connecting over SSH. However, the script also supports password-based authentication for quick prototyping. Please refer to the note below on authentication methods for more details.
-5.	Once all the validation passes, the corresponding metadata from the SUDI certificate is also displayed.
-6.	The fetched JSON output with the corresponding timestamp for each execution is stored in a directory named “output” within the current working directory. Sample format of the output filename is “sudi_certs_2024-01-31_17-37-24.json”.
-7.	The cert chain validation uses the Cisco public certs for the corresponding platforms. The required public certs have been pre-downloaded in the “certs” directory. 
+2.	Below steps are performed in this mode<br>
+a.	The script connects to the target router over SSH.<br>
+b.	The script then executes the required CLI (including a unique nonce to ensure the freshness of the response) to fetch the signed SUDI certificate in JSON format.<br>
+c.	Lastly, the script verifies the signature, validates the nonce and then verifies the SUDI certificate chain.<br>
+3.	For connecting to the router, the config.ini file in the current working directory will be used. The hostname and other details needed for connecting to the router can be provided in this file.<br>
+4.	We highly recommend using password less method of connecting over SSH. However, the script also supports password-based authentication for quick prototyping. Please refer to the note below on authentication methods for more details.<br>
+5.	Once all the validation passes, the corresponding metadata from the SUDI certificate is also displayed.<br>
+6.	The fetched JSON output with the corresponding timestamp for each execution is stored in a directory named “output” within the current working directory. Sample format of the output filename is “sudi_certs_2024-01-31_17-37-24.json”.<br>
+7.	The cert chain validation uses the Cisco public certs for the corresponding platforms. The required public certs have been pre-downloaded in the “certs” directory and are listed below for your reference.<br>
 
-ACT2SUDICA.pem
-crca2048.pem
-crca2099.pem
-hasudi.pem
+- ACT2SUDICA.pem<br>
+- crca2048.pem<br>
+- crca2099.pem<br>
+- hasudi.pem<br>
 
 Alternatively, users can download the certs from here - https://www.cisco.com/security/pki/
 
